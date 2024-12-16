@@ -1,0 +1,20 @@
+<div id="<%= dom_id post %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= post.title %>
+  </p>
+  
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Body:</strong>
+    <%= post.body %>
+  </p>
+
+  <p>
+    <strong>Updated at:</strong>
+    <%= time_tag post.updated_at, "data-local": "time", "data-format":"%B %d, %Y at %I:%M %p"%>
+  </p>
+
+  <% if post.image.attached? %>
+    <%= image_tag post.image %>
+  <% end %>
+</div>
